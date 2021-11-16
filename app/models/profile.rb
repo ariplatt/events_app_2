@@ -1,6 +1,10 @@
 class Profile < ApplicationRecord
   # Direct associations
 
+  has_many   :events,
+             :foreign_key => "event_id",
+             :dependent => :destroy
+
   # Indirect associations
 
   # Validations
