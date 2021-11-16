@@ -1,5 +1,7 @@
 class Profile < ApplicationRecord
-  # Direct associations
+  
+  include JwtToken
+# Direct associations
 
   has_many   :events,
              :foreign_key => "event_id",
