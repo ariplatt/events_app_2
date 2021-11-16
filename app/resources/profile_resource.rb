@@ -7,6 +7,9 @@ class ProfileResource < ApplicationResource
 
   # Direct associations
 
+  has_many   :events,
+             foreign_key: :event_id
+
   # Indirect associations
 
 end

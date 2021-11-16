@@ -14,6 +14,10 @@ class EventResource < ApplicationResource
 
   # Direct associations
 
+  belongs_to :event_goer,
+             resource: ProfileResource,
+             foreign_key: :event_id
+
   # Indirect associations
 
 end
