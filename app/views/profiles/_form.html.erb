@@ -1,0 +1,5 @@
+<% was_validated = profile.errors.any? %>
+
+<%= form_with(model: profile, local: true, novalidate: true, class: "mb-3") do |f| %>
+  <%= f.button class: "btn btn-outline-secondary btn-block" %>
+<% end %>
