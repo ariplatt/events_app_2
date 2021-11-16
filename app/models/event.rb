@@ -1,4 +1,6 @@
 class Event < ApplicationRecord
+  mount_uploader :photo, PhotoUploader
+
   # Direct associations
 
   has_one    :event_detail,
