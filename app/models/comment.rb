@@ -1,6 +1,10 @@
 class Comment < ApplicationRecord
   # Direct associations
 
+  belongs_to :profile,
+             :class_name => "EventDetail",
+             :foreign_key => "event_id"
+
   # Indirect associations
 
   # Validations
