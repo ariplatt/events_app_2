@@ -8,6 +8,7 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/1
   def show
+    @event = Event.new
   end
 
   # GET /profiles/new

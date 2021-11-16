@@ -1,0 +1,61 @@
+<!-- Form comment start -->
+<%= form_with(model: @comment, local: true) do |f| %>
+<!-- Form comment end -->
+
+  <!-- Label and input for email start -->
+  <div class="form-group">
+    <%= f.label :email %>
+
+    <!-- Input for email start -->
+    <%= f.text_field :email, class: "form-control" %>
+    <!-- Input for email end -->
+  </div>
+  <!-- Label and input for email end -->
+
+  <!-- Label and input for password start -->
+  <div class="form-group">
+    <%= f.label :password %>
+
+    <!-- Input for password start -->
+    <%= f.text_field :password, class: "form-control" %>
+    <!-- Input for password end -->
+  </div>
+  <!-- Label and input for password end -->
+
+  <!-- Label and input for event_id start -->
+  <!-- Input for event_id start -->
+  <%= f.hidden_field :event_id, value: @event_detail.id %>
+  <!-- Input for event_id end -->
+  <!-- Label and input for event_id end -->
+
+  <!-- Label and input for comment_time start -->
+  <div class="form-group">
+    <%= f.label :comment_time %>
+
+    <!-- Input for comment_time start -->
+    <%= f.date_select :comment_time, class: "form-control" %>
+    <!-- Input for comment_time end -->
+  </div>
+  <!-- Label and input for comment_time end -->
+
+  <!-- Label and input for comment_date start -->
+  <div class="form-group">
+    <%= f.label :comment_date %>
+
+    <!-- Input for comment_date start -->
+    <%= f.date_select :comment_date, class: "form-control" %>
+    <!-- Input for comment_date end -->
+  </div>
+  <!-- Label and input for comment_date end -->
+
+  <!-- Label and input for comment_text start -->
+  <div class="form-group">
+    <%= f.label :comment_text %>
+    <!-- Input for comment_text start -->
+    <%= f.text_area :comment_text, rows: "3", class: "form-control" %>
+    <!-- Input for comment_text end -->
+  </div>
+  <!-- Label and input for comment_text end -->
+
+  <%= f.submit "Create comment", class: "btn btn-block btn-outline-secondary" %>
+<% end %>
