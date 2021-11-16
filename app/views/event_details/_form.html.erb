@@ -1,7 +1,6 @@
 <% was_validated = event_detail.errors.any? %>
 
 <%= form_with(model: event_detail, local: true, novalidate: true, class: "mb-3") do |f| %>
-  <!-- Label and input for event_id start -->
   <div class="form-group">
     <% event_class = "form-control" %>
     <% event_was_invalid = event_detail.errors.include?(:event) %>
@@ -15,9 +14,7 @@
     <% end %>
 
     <%= f.label :event_id %>
-    <!-- Input for event_id start -->
     <%= f.collection_select :event_id, Event.all, :id, :to_s, {}, class: "form-control" %>
-    <!-- Input for event_id end -->
     <% if event_was_invalid %>
       <% event_detail.errors.full_messages_for(:event).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -26,8 +23,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for event_id end -->
-  <!-- Label and input for event_name start -->
   <div class="form-group">
     <% event_name_class = "form-control" %>
     <% event_name_was_invalid = event_detail.errors.include?(:event_name) %>
@@ -41,9 +36,7 @@
     <% end %>
 
     <%= f.label :event_name %>
-    <!-- Input for event_name start -->
     <%= f.text_field :event_name, class: event_name_class, placeholder: "Enter event name" %>
-    <!-- Input for event_name end -->
     <% if event_name_was_invalid %>
       <% event_detail.errors.full_messages_for(:event_name).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -52,8 +45,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for event_name end -->
-  <!-- Label and input for event_location start -->
   <div class="form-group">
     <% event_location_class = "form-control" %>
     <% event_location_was_invalid = event_detail.errors.include?(:event_location) %>
@@ -67,9 +58,7 @@
     <% end %>
 
     <%= f.label :event_location %>
-    <!-- Input for event_location start -->
     <%= f.text_field :event_location, class: event_location_class, placeholder: "Enter event location" %>
-    <!-- Input for event_location end -->
     <% if event_location_was_invalid %>
       <% event_detail.errors.full_messages_for(:event_location).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -78,6 +67,5 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for event_location end -->
   <%= f.button class: "btn btn-outline-secondary btn-block" %>
 <% end %>

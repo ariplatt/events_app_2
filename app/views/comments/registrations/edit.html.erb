@@ -7,9 +7,7 @@
 
       <div class="card-body">
         <% was_validated = resource.errors.any? %>
-        <!-- Form html options start -->
         <% form_html_options = { method: :put, novalidate: true, class: "mb-3" } %>
-        <!-- Form html options end -->
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: form_html_options) do |f| %>
 
           <% if flash[:notice].present? %>
@@ -147,7 +145,6 @@
           </div>
 
 
-          <!-- Devise Input for event_id start -->
           <div class="form-group">
             <% event_id_was_invalid = resource.errors.include?(:event_id) %>
 
@@ -173,9 +170,7 @@
               <% end %>
             <% end %>
           </div>
-          <!-- Devise Input for event_id end -->
 
-          <!-- Devise Input for comment_time start -->
           <div class="form-group">
             <% comment_time_was_invalid = resource.errors.include?(:comment_time) %>
 
@@ -201,9 +196,7 @@
               <% end %>
             <% end %>
           </div>
-          <!-- Devise Input for comment_time end -->
 
-          <!-- Devise Input for comment_date start -->
           <div class="form-group">
             <% comment_date_was_invalid = resource.errors.include?(:comment_date) %>
 
@@ -229,9 +222,7 @@
               <% end %>
             <% end %>
           </div>
-          <!-- Devise Input for comment_date end -->
 
-          <!-- Devise Input for comment_text start -->
           <div class="form-group">
             <% comment_text_was_invalid = resource.errors.include?(:comment_text) %>
 
@@ -257,7 +248,6 @@
               <% end %>
             <% end %>
           </div>
-          <!-- Devise Input for comment_text end -->
           <%= f.submit "Update", class: "btn btn-block btn-outline-primary" %>
         <% end %>
 

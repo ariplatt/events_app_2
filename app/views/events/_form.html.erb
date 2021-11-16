@@ -1,12 +1,7 @@
 <% was_validated = event.errors.any? %>
 
 <%= form_with(model: event, local: true, novalidate: true, class: "mb-3") do |f| %>
-  <!-- Label and input for event_id start -->
-  <!-- Input for "event_id" start -->
   <%= f.hidden_field :event_id, value: current_profile.id %>
-  <!-- Input for "event_id" end -->
-  <!-- Label and input for event_id end -->
-  <!-- Label and input for event_name start -->
   <div class="form-group">
     <% event_name_class = "form-control" %>
     <% event_name_was_invalid = event.errors.include?(:event_name) %>
@@ -20,9 +15,7 @@
     <% end %>
 
     <%= f.label :event_name %>
-    <!-- Input for event_name start -->
     <%= f.text_field :event_name, class: event_name_class, placeholder: "Enter event name" %>
-    <!-- Input for event_name end -->
     <% if event_name_was_invalid %>
       <% event.errors.full_messages_for(:event_name).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -31,8 +24,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for event_name end -->
-  <!-- Label and input for event_start_time start -->
   <div class="form-group">
     <% event_start_time_class = "form-control" %>
     <% event_start_time_was_invalid = event.errors.include?(:event_start_time) %>
@@ -46,9 +37,7 @@
     <% end %>
 
     <%= f.label :event_start_time %>
-    <!-- Input for event_start_time start -->
     <%= f.time_select :event_start_time, class: event_start_time_class, placeholder: "Enter event start time" %>
-    <!-- Input for event_start_time end -->
     <% if event_start_time_was_invalid %>
       <% event.errors.full_messages_for(:event_start_time).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -57,8 +46,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for event_start_time end -->
-  <!-- Label and input for event_start_date start -->
   <div class="form-group">
     <% event_start_date_class = "form-control" %>
     <% event_start_date_was_invalid = event.errors.include?(:event_start_date) %>
@@ -72,9 +59,7 @@
     <% end %>
 
     <%= f.label :event_start_date %>
-    <!-- Input for event_start_date start -->
     <%= f.date_select :event_start_date, class: event_start_date_class, placeholder: "Enter event start date" %>
-    <!-- Input for event_start_date end -->
     <% if event_start_date_was_invalid %>
       <% event.errors.full_messages_for(:event_start_date).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -83,8 +68,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for event_start_date end -->
-  <!-- Label and input for event_end_time start -->
   <div class="form-group">
     <% event_end_time_class = "form-control" %>
     <% event_end_time_was_invalid = event.errors.include?(:event_end_time) %>
@@ -98,9 +81,7 @@
     <% end %>
 
     <%= f.label :event_end_time %>
-    <!-- Input for event_end_time start -->
     <%= f.time_select :event_end_time, class: event_end_time_class, placeholder: "Enter event end time" %>
-    <!-- Input for event_end_time end -->
     <% if event_end_time_was_invalid %>
       <% event.errors.full_messages_for(:event_end_time).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -109,8 +90,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for event_end_time end -->
-  <!-- Label and input for event_end_date start -->
   <div class="form-group">
     <% event_end_date_class = "form-control" %>
     <% event_end_date_was_invalid = event.errors.include?(:event_end_date) %>
@@ -124,9 +103,7 @@
     <% end %>
 
     <%= f.label :event_end_date %>
-    <!-- Input for event_end_date start -->
     <%= f.date_select :event_end_date, class: event_end_date_class, placeholder: "Enter event end date" %>
-    <!-- Input for event_end_date end -->
     <% if event_end_date_was_invalid %>
       <% event.errors.full_messages_for(:event_end_date).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -135,8 +112,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for event_end_date end -->
-  <!-- Label and input for event_host_id start -->
   <div class="form-group">
     <% event_host_class = "form-control" %>
     <% event_host_was_invalid = event.errors.include?(:event_host) %>
@@ -150,9 +125,7 @@
     <% end %>
 
     <%= f.label :event_host_id %>
-    <!-- Input for event_host_id start -->
     <%= f.number_field :event_host_id, class: event_host_class, placeholder: "Enter event host" %>
-    <!-- Input for event_host_id end -->
     <% if event_host_was_invalid %>
       <% event.errors.full_messages_for(:event_host).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -161,8 +134,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for event_host_id end -->
-  <!-- Label and input for event_host_name start -->
   <div class="form-group">
     <% event_host_name_class = "form-control" %>
     <% event_host_name_was_invalid = event.errors.include?(:event_host_name) %>
@@ -176,9 +147,7 @@
     <% end %>
 
     <%= f.label :event_host_name %>
-    <!-- Input for event_host_name start -->
     <%= f.text_field :event_host_name, class: event_host_name_class, placeholder: "Enter event host name" %>
-    <!-- Input for event_host_name end -->
     <% if event_host_name_was_invalid %>
       <% event.errors.full_messages_for(:event_host_name).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -187,8 +156,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for event_host_name end -->
-  <!-- Label and input for photo start -->
   <div class="form-group">
     <% photo_class = "form-control" %>
     <% photo_was_invalid = event.errors.include?(:photo) %>
@@ -202,9 +169,7 @@
     <% end %>
 
     <%= f.label :photo %>
-    <!-- Input for photo start -->
     <%= f.file_field :photo, class: "form-control" %>
-    <!-- Input for photo end -->
     <% if photo_was_invalid %>
       <% event.errors.full_messages_for(:photo).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -213,6 +178,5 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for photo end -->
   <%= f.button class: "btn btn-outline-secondary btn-block" %>
 <% end %>

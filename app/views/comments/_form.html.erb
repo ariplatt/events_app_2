@@ -1,7 +1,6 @@
 <% was_validated = comment.errors.any? %>
 
 <%= form_with(model: comment, local: true, novalidate: true, class: "mb-3") do |f| %>
-  <!-- Label and input for event_id start -->
   <div class="form-group">
     <% event_class = "form-control" %>
     <% event_was_invalid = comment.errors.include?(:event) %>
@@ -15,9 +14,7 @@
     <% end %>
 
     <%= f.label :event_id %>
-    <!-- Input for event_id start -->
     <%= f.collection_select :event_id, EventDetail.all, :id, :to_s, {}, class: "form-control" %>
-    <!-- Input for event_id end -->
     <% if event_was_invalid %>
       <% comment.errors.full_messages_for(:event).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -26,8 +23,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for event_id end -->
-  <!-- Label and input for comment_time start -->
   <div class="form-group">
     <% comment_time_class = "form-control" %>
     <% comment_time_was_invalid = comment.errors.include?(:comment_time) %>
@@ -41,9 +36,7 @@
     <% end %>
 
     <%= f.label :comment_time %>
-    <!-- Input for comment_time start -->
     <%= f.time_select :comment_time, class: comment_time_class, placeholder: "Enter comment time" %>
-    <!-- Input for comment_time end -->
     <% if comment_time_was_invalid %>
       <% comment.errors.full_messages_for(:comment_time).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -52,8 +45,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for comment_time end -->
-  <!-- Label and input for comment_date start -->
   <div class="form-group">
     <% comment_date_class = "form-control" %>
     <% comment_date_was_invalid = comment.errors.include?(:comment_date) %>
@@ -67,9 +58,7 @@
     <% end %>
 
     <%= f.label :comment_date %>
-    <!-- Input for comment_date start -->
     <%= f.date_select :comment_date, class: comment_date_class, placeholder: "Enter comment date" %>
-    <!-- Input for comment_date end -->
     <% if comment_date_was_invalid %>
       <% comment.errors.full_messages_for(:comment_date).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -78,8 +67,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for comment_date end -->
-  <!-- Label and input for comment_text start -->
   <div class="form-group">
     <% comment_text_class = "form-control" %>
     <% comment_text_was_invalid = comment.errors.include?(:comment_text) %>
@@ -93,9 +80,7 @@
     <% end %>
 
     <%= f.label :comment_text %>
-    <!-- Input for comment_text start -->
     <%= f.text_area :comment_text, class: comment_text_class, placeholder: "Enter comment text" %>
-    <!-- Input for comment_text end -->
     <% if comment_text_was_invalid %>
       <% comment.errors.full_messages_for(:comment_text).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -104,6 +89,5 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for comment_text end -->
   <%= f.button class: "btn btn-outline-secondary btn-block" %>
 <% end %>

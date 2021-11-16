@@ -6,55 +6,37 @@
   <div class="card-body">
     <dl class="mb-1">
       <dt>Event</dt>
-      <!-- Display event_id start -->
       <dd>
         <% if @event.event_goer.present? %>
           <%= link_to event.event_goer, event.event_goer %>
         <% end %>
       </dd>
-      <!-- Display event_id end -->
 
       <dt>Event name</dt>
-      <!-- Display event_name start -->
       <dd><%= event.event_name %></dd>
-      <!-- Display event_name end -->
 
       <dt>Event start time</dt>
-      <!-- Display event_start_time start -->
       <dd><%= event.event_start_time %></dd>
-      <!-- Display event_start_time end -->
 
       <dt>Event start date</dt>
-      <!-- Display event_start_date start -->
       <dd><%= event.event_start_date %></dd>
-      <!-- Display event_start_date end -->
 
       <dt>Event end time</dt>
-      <!-- Display event_end_time start -->
       <dd><%= event.event_end_time %></dd>
-      <!-- Display event_end_time end -->
 
       <dt>Event end date</dt>
-      <!-- Display event_end_date start -->
       <dd><%= event.event_end_date %></dd>
-      <!-- Display event_end_date end -->
 
       <dt>Event host</dt>
-      <!-- Display event_host_id start -->
       <dd><%= event.event_host_id %></dd>
-      <!-- Display event_host_id end -->
 
       <dt>Event host name</dt>
-      <!-- Display event_host_name start -->
       <dd><%= event.event_host_name %></dd>
-      <!-- Display event_host_name end -->
 
       <dt>Photo</dt>
-      <!-- Display photo start -->
       <dd>
         <%= cl_image_tag @event.photo, class: "img-fluid" %>
       </dd>
-      <!-- Display photo end -->
 
     </dl>
 
@@ -63,7 +45,6 @@
         <%= link_to_show_or_back event, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
       </div>
 
-      <!-- Edit link event start -->
       <div class="col">
         <% if current_profile == @event.event_goer %>
           <%= link_to edit_event_url(event), class: "btn btn-block btn-sm btn-outline-secondary" do %>
@@ -71,9 +52,7 @@
           <% end %>
         <% end %>
       </div>
-      <!-- Edit link event end -->
 
-      <!-- Delete link event start -->
       <div class="col">
         <% if current_profile == @event.event_goer %>
           <%= link_to event, method: :delete, data: { confirm: "Do you really want to delete this event?" }, class: "btn btn-block btn-outline-secondary" do %>
@@ -81,7 +60,6 @@
           <% end %>
         <% end %>
       </div>
-      <!-- Delete link event end -->
     </div>
   </div>
 

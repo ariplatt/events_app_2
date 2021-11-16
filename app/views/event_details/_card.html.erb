@@ -6,23 +6,17 @@
   <div class="card-body">
     <dl class="mb-1">
       <dt>Event</dt>
-      <!-- Display event_id start -->
       <dd>
         <% if @event_detail.event.present? %>
           <%= link_to event_detail.event, event_detail.event %>
         <% end %>
       </dd>
-      <!-- Display event_id end -->
 
       <dt>Event name</dt>
-      <!-- Display event_name start -->
       <dd><%= event_detail.event_name %></dd>
-      <!-- Display event_name end -->
 
       <dt>Event location</dt>
-      <!-- Display event_location start -->
       <dd><%= event_detail.event_location %></dd>
-      <!-- Display event_location end -->
 
     </dl>
 
@@ -31,21 +25,17 @@
         <%= link_to_show_or_back event_detail, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
       </div>
 
-      <!-- Edit link event_detail start -->
       <div class="col">
         <%= link_to edit_event_detail_url(event_detail), class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-edit"></i>
         <% end %>
       </div>
-      <!-- Edit link event_detail end -->
 
-      <!-- Delete link event_detail start -->
       <div class="col">
         <%= link_to event_detail, method: :delete, data: { confirm: "Do you really want to delete this event_detail?" }, class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
       </div>
-      <!-- Delete link event_detail end -->
     </div>
   </div>
 

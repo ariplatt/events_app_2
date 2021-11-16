@@ -1,92 +1,54 @@
-<!-- Form event start -->
 <%= form_with(model: @event, local: true) do |f| %>
-<!-- Form event end -->
 
-  <!-- Label and input for event_id start -->
-  <!-- Input for event_id start -->
   <%= f.hidden_field :event_id, value: @profile.id %>
-  <!-- Input for event_id end -->
-  <!-- Label and input for event_id end -->
 
-  <!-- Label and input for event_name start -->
   <div class="form-group">
     <%= f.label :event_name %>
 
-    <!-- Input for event_name start -->
     <%= f.text_field :event_name, class: "form-control" %>
-    <!-- Input for event_name end -->
   </div>
-  <!-- Label and input for event_name end -->
 
-  <!-- Label and input for event_start_time start -->
   <div class="form-group">
     <%= f.label :event_start_time %>
 
-    <!-- Input for event_start_time start -->
     <%= f.date_select :event_start_time, class: "form-control" %>
-    <!-- Input for event_start_time end -->
   </div>
-  <!-- Label and input for event_start_time end -->
 
-  <!-- Label and input for event_start_date start -->
   <div class="form-group">
     <%= f.label :event_start_date %>
 
-    <!-- Input for event_start_date start -->
     <%= f.date_select :event_start_date, class: "form-control" %>
-    <!-- Input for event_start_date end -->
   </div>
-  <!-- Label and input for event_start_date end -->
 
-  <!-- Label and input for event_end_time start -->
   <div class="form-group">
     <%= f.label :event_end_time %>
 
-    <!-- Input for event_end_time start -->
     <%= f.date_select :event_end_time, class: "form-control" %>
-    <!-- Input for event_end_time end -->
   </div>
-  <!-- Label and input for event_end_time end -->
 
-  <!-- Label and input for event_end_date start -->
   <div class="form-group">
     <%= f.label :event_end_date %>
 
-    <!-- Input for event_end_date start -->
     <%= f.date_select :event_end_date, class: "form-control" %>
-    <!-- Input for event_end_date end -->
   </div>
-  <!-- Label and input for event_end_date end -->
 
-  <!-- Label and input for event_host_id start -->
   <div class="form-group">
     <%= f.label :event_host_id %>
 
-    <!-- Input for event_host_id start -->
     <%= f.text_field :event_host_id, class: "form-control" %>
-    <!-- Input for event_host_id end -->
   </div>
-  <!-- Label and input for event_host_id end -->
 
-  <!-- Label and input for event_host_name start -->
   <div class="form-group">
     <%= f.label :event_host_name %>
 
-    <!-- Input for event_host_name start -->
     <%= f.text_field :event_host_name, class: "form-control" %>
-    <!-- Input for event_host_name end -->
   </div>
-  <!-- Label and input for event_host_name end -->
 
-  <!-- Label and input for photo start -->
   <div class="form-group">
     <%= f.label :photo %>
 
-    <!-- Input for photo start -->
     <%= f.file_field :photo, class: "form-control" %>
-    <!-- Input for photo end -->
   </div>
-  <!-- Label and input for photo end -->
 
   <%= f.submit "Create event", class: "btn btn-block btn-outline-secondary" %>
 <% end %>
