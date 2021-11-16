@@ -11,6 +11,10 @@ class CommentResource < ApplicationResource
 
   # Direct associations
 
+  belongs_to :profile,
+             resource: EventDetailResource,
+             foreign_key: :event_id
+
   # Indirect associations
 
 end

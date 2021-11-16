@@ -8,6 +8,9 @@ class EventDetailResource < ApplicationResource
 
   # Direct associations
 
+  has_many   :comments,
+             foreign_key: :event_id
+
   belongs_to :event
 
   # Indirect associations
