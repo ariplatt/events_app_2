@@ -21,5 +21,4 @@ class EventResource < ApplicationResource
              foreign_key: :event_id
 
   # Indirect associations
-
 end

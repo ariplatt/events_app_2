@@ -1,11 +1,10 @@
 class Profile < ApplicationRecord
-  
   include JwtToken
-# Direct associations
+  # Direct associations
 
   has_many   :events,
-             :foreign_key => "event_id",
-             :dependent => :destroy
+             foreign_key: "event_id",
+             dependent: :destroy
 
   # Indirect associations
 

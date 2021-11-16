@@ -14,5 +14,4 @@ class EventDetailResource < ApplicationResource
   belongs_to :event
 
   # Indirect associations
-
 end
